@@ -41,7 +41,7 @@ export const servicesData: ServiceItem[] = [
     {
         heading: "Career Readiness",
         descp: "Get ready for the real job world, from interviews to confidence we help you feel prepared at every step",
-        image: "/14eb82aa32fcc76d8f26b8e14f001cc6.jpg"
+        image: "/14eb82aa32fcc76d8f26b8e14f001cc6.png"
     }
 ];
 
