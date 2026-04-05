@@ -57,7 +57,7 @@ const teamData: team = [
 const Team = () => {
   return (
     <section>
-      <div className="lg:py-10 sm:py-8 py-6">
+      <div className="lg:pt-4 sm:pt-4 py-4 lg:pb-4 sm:pb-4 pb-4">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-16 flex flex-col items-center justify-center gap-8 md:gap-16">
           <motion.div
             initial={{ y: -40, opacity: 0 }}

@@ -10,6 +10,8 @@ import Character3 from "../public/3.png";
 import Character4 from "../public/4.png";
 import Feature01 from "@/components/shadcn-space/blocks/feature-01";
 import Team01 from "@/components/shadcn-space/blocks/team-01/team";
+import Services02 from "@/components/shadcn-space/blocks/services-02/services";
+import { Footer } from "@/components/footer";
 
 const headingSerif = Instrument_Serif({
   subsets: ["latin"],
@@ -166,9 +168,13 @@ export default function Home() {
         <section id="features">
           <Feature01 />
         </section>
+        <section id="services">
+          <Services02 />
+        </section>
         <section id="experts">
           <Team01 />
         </section>
+        <Footer />
       </div>
     </>
   );
