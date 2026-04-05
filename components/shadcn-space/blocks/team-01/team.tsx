@@ -28,7 +28,7 @@ type team = {
   role: string;
   image: string;
   socials: {
-    website: string;
+    instagram: string;
     linkedin: string;
   };
 }[];
@@ -36,21 +36,21 @@ type team = {
 const teamData: team = [
   {
     name: "Anjali Panigrahi",
-    role: "Senior HR",
+    role: "Senior HR @Prodapt",
     image: "/Gemini_Generated_Image_fq0gfufq0gfufq0g.png",
-    socials: { website: "#", linkedin: "#" },
+    socials: { instagram: "https://www.instagram.com/_anjali_panigrahi_?igsh=ZWJjajJjOG50bXZn", linkedin: "https://www.linkedin.com/in/anjali-panigrahi" },
   },
   {
     name: "Aditya Panigrahi",
     role: "Founder Atom Tech",
     image: "/Gemini_Generated_Image_gw6l01gw6l01gw6l.png",
-    socials: { website: "#", linkedin: "#" },
+    socials: { instagram: "https://www.instagram.com/another.adityaa?igsh=ajVraGh3aDg2N2kx", linkedin: "https://www.linkedin.com/in/aditya-prasad-panigrahi" },
   },
   {
     name: "Pramit Kumar Sahu",
-    role: "Senior Software Engineer",
+    role: "Senior Software Engineer @PWC",
     image: "/image.png",
-    socials: { website: "#", linkedin: "#" },
+    socials: { instagram: "https://www.instagram.com/pramit_meee?igsh=bWozeGhjbDNka3Bs", linkedin: "https://www.linkedin.com/in/pramit-kumar-sahu-he-him-69a661183?utm_source=share_via&utm_content=profile&utm_medium=member_android" },
   },
 ];
 
@@ -103,12 +103,18 @@ const Team = () => {
                       {value.role}
                     </p>
                   </div>
-                  <div className="flex gap-1 sm:gap-2">
-                    <a href={value.socials.website} className="p-1.5 sm:p-2 hover:bg-accent/80 rounded-full" target="_blank" rel="noopener noreferrer">
-                      <Globe size={14} className="sm:w-4 sm:h-4" />
+                  <div className="flex gap-3 sm:gap-4 items-center mt-1">
+                    <a href={value.socials.instagram} className="hover:scale-110 transition-transform duration-200" target="_blank" rel="noopener noreferrer">
+                      <Image
+                        src="/instagram-logo-with-colorful-gradient_1273375-1516.jpg"
+                        alt="Instagram"
+                        width={24}
+                        height={24}
+                        className="w-5 h-5 sm:w-6 sm:h-6 object-contain"
+                      />
                     </a>
-                    <a href={value.socials.linkedin} className="p-1.5 sm:p-2 hover:bg-accent/80 rounded-full" target="_blank" rel="noopener noreferrer">
-                      <LinkedinIcon size={14} />
+                    <a href={value.socials.linkedin} className="hover:scale-110 transition-transform duration-200 text-[#0077b5]" target="_blank" rel="noopener noreferrer">
+                      <LinkedinIcon size={22} />
                     </a>
                   </div>
                 </div>

@@ -27,7 +27,7 @@ export const HeroHeader = () => {
         <header>
             <nav
                 data-state={menuState && 'active'}
-                className="fixed z-20 w-full px-2 overflow-x-hidden">
+                className="fixed z-20 w-full px-2">
                 <div className={cn('mx-auto mt-2 max-w-6xl w-full transition-all duration-300', isScrolled && 'bg-background/80 max-w-4xl rounded-2xl border backdrop-blur-md')}>
                     <div className="relative flex items-center justify-between h-16 px-1.5 sm:px-4">
                         <Link
@@ -40,7 +40,7 @@ export const HeroHeader = () => {
                         <button
                             onClick={() => setMenuState(!menuState)}
                             aria-label={menuState == true ? 'Close Menu' : 'Open Menu'}
-                            className="hidden">
+                            className="relative z-20 block cursor-pointer p-2 lg:hidden">
                             <Menu className="in-data-[state=active]:rotate-180 in-data-[state=active]:scale-0 in-data-[state=active]:opacity-0 m-auto size-6 duration-200" />
                             <X className="in-data-[state=active]:rotate-0 in-data-[state=active]:scale-100 in-data-[state=active]:opacity-100 absolute inset-0 m-auto size-6 -rotate-180 scale-0 opacity-0 duration-200" />
                         </button>
@@ -59,16 +59,19 @@ export const HeroHeader = () => {
                             </ul>
                         </div>
 
-                        <div className="bg-background in-data-[state=active]:block lg:in-data-[state=active]:flex absolute top-full inset-x-0 mx-4 mt-4 rounded-3xl border p-6 shadow-2xl hidden items-center justify-end space-y-8 md:flex-nowrap lg:relative lg:inset-auto lg:mx-0 lg:top-0 lg:mt-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none dark:shadow-none dark:lg:bg-transparent">
+                        <div className="bg-background/80 backdrop-blur-md in-data-[state=active]:block lg:in-data-[state=active]:flex absolute top-full inset-x-0 mx-4 mt-4 rounded-3xl border p-6 shadow-2xl hidden items-center justify-end space-y-8 md:flex-nowrap lg:relative lg:inset-auto lg:mx-0 lg:top-0 lg:mt-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none dark:shadow-none dark:lg:bg-transparent">
                             <div className="lg:hidden">
                                 <ul className="space-y-6 text-base">
                                     {menuItems.map((item, index) => (
                                         <li key={index}>
-                                            <Link
+                                            <a
                                                 href={item.href}
+                                                onClick={() => {
+                                                    setTimeout(() => setMenuState(false), 100);
+                                                }}
                                                 className="text-muted-foreground hover:text-accent-foreground block duration-150">
                                                 <span>{item.name}</span>
-                                            </Link>
+                                            </a>
                                         </li>
                                     ))}
                                 </ul>
@@ -77,6 +80,7 @@ export const HeroHeader = () => {
                                 <Button
                                     size="lg"
                                     onClick={() => {
+                                        setMenuState(false);
                                         window.open('https://forms.gle/NYkQTh2EeLP3Jc5Z9', '_blank');
                                     }}
                                 >
