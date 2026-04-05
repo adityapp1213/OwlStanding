@@ -3,6 +3,12 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { LucideIcon } from "lucide-react";
 import { motion } from "motion/react";
+import { Instrument_Serif } from "next/font/google";
+
+const headingSerif = Instrument_Serif({
+  subsets: ["latin"],
+  weight: ["400"],
+});
 
 type Features = {
   icon: LucideIcon;
@@ -32,7 +38,7 @@ const Feature = ({ featureData }: { featureData: Features }) => {
                 >
                   Features
                 </Badge>
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold">
+                <h2 className={`${headingSerif.className} font-normal tracking-tight text-foreground text-3xl sm:text-4xl md:text-5xl lg:text-6xl`}>
                   Personalized Learning, Just for You
                 </h2>
                 <p className="text-base md:text-lg font-normal text-muted-foreground">
@@ -51,7 +57,7 @@ const Feature = ({ featureData }: { featureData: Features }) => {
                   duration: 0.8,
                   ease: [0.21, 0.47, 0.32, 0.98],
                 }}
-                className="p-6 sm:p-16 rounded-2xl bg-[url('/5.png')] object-cover bg-center w-full bg-cover bg-no-repeat min-h-[200px] sm:min-h-[260px] lg:h-full"
+                className="p-6 sm:p-16 rounded-2xl bg-[url('/5.png')] object-cover bg-center w-full bg-cover bg-no-repeat min-h-[350px] sm:min-h-[400px] lg:h-full"
               >
               </motion.div>
 

@@ -3,6 +3,12 @@ import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { Globe } from "lucide-react";
 import { motion } from "motion/react";
+import { Instrument_Serif } from "next/font/google";
+
+const headingSerif = Instrument_Serif({
+  subsets: ["latin"],
+  weight: ["400"],
+});
 
 const LinkedinIcon = ({ size = 16 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -63,7 +69,7 @@ const Team = () => {
             <Badge variant={"outline"} className="px-3 py-1 h-auto text-sm">
               Mentors
             </Badge>
-            <h2 className="text-2xl sm:text-3xl md:text-5xl font-medium text-foreground">
+            <h2 className={`${headingSerif.className} font-normal tracking-tight text-foreground text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center`}>
               Meet Our Expert Mentors
             </h2>
           </motion.div>
