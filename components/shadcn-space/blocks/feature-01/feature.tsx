@@ -39,10 +39,11 @@ const Feature = ({ featureData }: { featureData: Features }) => {
                   Features
                 </Badge>
                 <h2 className={`${headingSerif.className} font-normal tracking-tight text-foreground text-3xl sm:text-4xl md:text-5xl lg:text-6xl`}>
-                  Personalized Learning, Just for You
+                  Campus to Corporate
                 </h2>
                 <p className="text-base md:text-lg font-normal text-muted-foreground">
-                  Experience tailored education with one-on-one sessions designed to fit your unique learning style and pace.
+                  Land Your First Big Job Everything you need to go from graduation to the corporate office.
+
                 </p>
               </div>
               

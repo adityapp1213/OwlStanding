@@ -5,19 +5,19 @@ import { ArrowDownUp, BellRing, RotateCw, Tag } from "lucide-react"
 const featureData = [
     {
       icon: ArrowDownUp,
-      content: "Tailored curriculum designed to match your individual goals and learning pace.",
+      content: "Made for your style: Learn GD and Interview tricks that work for you.",
     },
     {
       icon: BellRing,
-      content: "Direct access to expert instructors for real-time feedback and support.",
+      content: "Real-world guidance: Get help with your CV and brand from people who know.",
     },
     {
       icon: RotateCw,
-      content: "Flexible scheduling options to fit your busy lifestyle.",
+      content: "No rush, no stress: Prep for your future on your own schedule.",
     },
     {
       icon: Tag,
-      content: "Progress tracking and personalized adjustments to optimize your learning journey.",
+      content: "Faster improvements: See exactly where you’re getting better every day.",
     },
 ];
 
