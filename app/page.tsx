@@ -75,8 +75,7 @@ export default function Home() {
                 </h1>
 
                 <p className="mt-3 md:mt-4 max-w-xl text-sm text-muted-foreground md:text-base px-2 md:px-0">
-                  The bridge between a college degree and a career can feel like a gap too wide to jump.
-                  We get it- that’s why we don’t believe in "overnight success." We believe in the real time win.
+                  Join the waitlist to get a seat in our cohort 1 which will take place on may 1st 2026.
                 </p>
 
                 <form
