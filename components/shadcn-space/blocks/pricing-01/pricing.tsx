@@ -20,7 +20,7 @@ const pricingData: PricingPlan[] = [
   {
     plan_bg_color: "bg-blue-500/10",
     plan_name: "Starter",
-    plan_descp: "Only acess to the group live class ;(",
+    plan_descp: "Only access to group live class ;(",
     plan_price: 99,
     plan_feature: [
       "Live group class",
@@ -120,7 +120,7 @@ const Pricing = () => {
                             /month
                           </span>
                         </p>
-                        <Button 
+                        <Button
                           className="relative bg-white hover:bg-white hover:text-black dark:hover:text-black text-black text-sm font-medium rounded-full h-12 p-1 ps-6 pe-14 group transition-all duration-500 hover:ps-14 hover:pe-6 w-fit overflow-hidden cursor-pointer"
                           onClick={() => window.open('https://forms.gle/NYkQTh2EeLP3Jc5Z9', '_blank')}
                         >
