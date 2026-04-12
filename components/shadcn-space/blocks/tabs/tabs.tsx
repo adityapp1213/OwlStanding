@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { cn } from "@/lib/utils";
+import { ChevronDown } from "lucide-react";
 
 interface SourceItem {
     icon: string;
@@ -71,6 +72,41 @@ export default function BrowserShowcase() {
     const isMobile = useIsMobile();
     const mobileScrollRef = useRef<HTMLDivElement>(null);
 
+    const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+    const resumeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+    const handleInteraction = () => {
+        if (!isMobile) return;
+        setIsAutoPlaying(false);
+        if (resumeTimeoutRef.current) clearTimeout(resumeTimeoutRef.current);
+        resumeTimeoutRef.current = setTimeout(() => {
+            setIsAutoPlaying(true);
+        }, 3000); // Resume after 3 seconds
+    };
+
+    useEffect(() => {
+        if (!isMobile || !isAutoPlaying) return;
+
+        const interval = setInterval(() => {
+            if (mobileScrollRef.current) {
+                const itemHeight = mobileScrollRef.current.offsetHeight;
+                const nextIndex = (activeIndex + 1) % features.length;
+                mobileScrollRef.current.scrollTo({
+                    top: nextIndex * itemHeight,
+                    behavior: "smooth"
+                });
+            }
+        }, 3000); // Change card every 3 seconds
+
+        return () => clearInterval(interval);
+    }, [isMobile, isAutoPlaying, activeIndex]);
+
+    useEffect(() => {
+        return () => {
+            if (resumeTimeoutRef.current) clearTimeout(resumeTimeoutRef.current);
+        };
+    }, []);
+
     useEffect(() => {
         if (!isMobile || !mobileScrollRef.current) return;
         const container = mobileScrollRef.current;
@@ -104,7 +140,7 @@ export default function BrowserShowcase() {
                                 <div className="h-[10px] w-[10px] rounded-full bg-[#ccc]" />
                                 <div className="h-[10px] w-[10px] rounded-full bg-[#ccc]" />
                             </div>
-                            <div className="flex items-center gap-2 flex-1 overflow-x-auto no-scrollbar py-1">
+                            <div className="flex items-center gap-2 flex-1 overflow-x-auto no-scrollbar py-2">
                                 {browserTabs.map((tab, i) => {
                                     const isSelected = activeTabIndices.includes(i);
                                     
@@ -115,7 +151,7 @@ export default function BrowserShowcase() {
                                         <div
                                             key={`${tab.label}-${i}`}
                                             className={`flex items-center gap-[6px] px-[10px] md:px-[12px] py-[6px] text-[10px] font-medium whitespace-nowrap transition-all duration-300 rounded-lg ${isSelected
-                                                ? "bg-white shadow-sm ring-1 ring-black/5 text-foreground scale-105"
+                                                ? "bg-white shadow-sm ring-1 ring-black/5 text-foreground" + (isMobile ? "" : " scale-105")
                                                 : "text-foreground/40 opacity-60 scale-95"
                                                 }`}
                                         >
@@ -141,7 +177,7 @@ export default function BrowserShowcase() {
                 </div>
 
                 {/* Cards Layer */}
-                <div className="relative z-10 w-full md:mt-24 -mt-[2px]">
+                <div className="relative z-10 w-full md:mt-24 -mt-4">
                     {!isMobile && (
                         <div className="flex justify-between items-start gap-8 w-full h-[420px]">
                             {features.map((feature, i) => {
@@ -164,24 +200,33 @@ export default function BrowserShowcase() {
                     )}
 
                     {isMobile && (
-                        <div 
-                            ref={mobileScrollRef}
-                            className="flex flex-col h-[400px] overflow-y-auto snap-y snap-mandatory scrollbar-hide border-x-2 border-b-2 border-foreground rounded-b-2xl bg-gradient-to-b from-[#f1f0ea] to-transparent"
-                            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-                        >
-                            {features.map((feature, i) => {
-                                const isActive = i === activeIndex;
-                                return (
-                                    <div 
-                                        key={feature.id} 
-                                        className="snap-start shrink-0 w-full h-full flex items-center justify-center p-4"
-                                    >
-                                        <div className="w-full transform scale-[1.08] transition-all duration-300">
-                                            <CardContent feature={feature} isActive={isActive} />
+                        <div className="relative group">
+                            <div 
+                                ref={mobileScrollRef}
+                                className="flex flex-col h-[380px] overflow-y-auto snap-y snap-mandatory scrollbar-hide border-x-2 border-b-2 border-foreground rounded-b-2xl bg-gradient-to-b from-[#f1f0ea] to-transparent"
+                                style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+                                onTouchStart={handleInteraction}
+                                onMouseDown={handleInteraction}
+                                onWheel={handleInteraction}
+                            >
+                                {features.map((feature, i) => {
+                                    const isActive = i === activeIndex;
+                                    return (
+                                        <div 
+                                            key={feature.id} 
+                                            className="snap-start shrink-0 w-full h-full flex items-center justify-center p-4 pt-10 pb-12"
+                                        >
+                                            <div className="w-full transform scale-100 transition-all duration-300">
+                                                <CardContent feature={feature} isActive={isActive} />
+                                            </div>
                                         </div>
-                                    </div>
-                                );
-                            })}
+                                    );
+                                })}
+                            </div>
+                            {/* Down Arrow Indicator */}
+                            <div className="absolute bottom-2 left-1/2 -translate-x-1/2 animate-bounce pointer-events-none text-foreground/30">
+                                <ChevronDown size={24} />
+                            </div>
                         </div>
                     )}
                 </div>
