@@ -16,9 +16,9 @@ const footerLinks = [
     { name: 'Experts', href: '#experts' },
 ]
 
-export const Footer = () => {
+export const Footer = ({ className }: { className?: string }) => {
     return (
-        <footer className="bg-background border-t">
+        <footer className={cn("border-t", className)}>
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-2 md:py-4">
                 <div className="hidden md:flex flex-col md:flex-row justify-between items-start gap-8 md:gap-4">
                     <div className="flex flex-col gap-1">

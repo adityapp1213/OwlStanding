@@ -50,7 +50,13 @@ const teamData: team = [
     name: "Pramit Kumar Sahu",
     role: "Senior Software Engineer @PWC",
     image: "/image.png",
-    socials: { instagram: "https://www.instagram.com/pramit_meee?igsh=bWozeGhjbDNka3Bs", linkedin: "https://www.linkedin.com/in/pramit-kumar-sahu-he-him-69a661183?utm_source=share_via&utm_content=profile&utm_medium=member_android" },
+    socials: { instagram: "https://www.instagram.com/pramit_meee?igsh=bWozeGhjbDNka3Bs", linkedin: "https://www.linkedin.com/in/pramit-kumar-sahu" },
+  },
+  {
+    name: "Bikash Kumar Sethy",
+    role: "Assistant Manager @KFintech",
+    image: "/bikash.png",
+    socials: { instagram: "https://www.linkedin.com/in/bikash-kumar-sethy-165879145?utm_source=share_via&utm_content=profile&utm_medium=member_ios", linkedin: "https://www.linkedin.com/in/bikash-kumar-sethy-165879145?utm_source=share_via&utm_content=profile&utm_medium=member_ios" },
   },
 ];
 
@@ -74,7 +80,7 @@ const Team = () => {
             </h2>
           </motion.div>
 
-          <div className="flex flex-wrap justify-center gap-x-4 gap-y-10 sm:gap-x-8 sm:gap-y-16 w-full max-w-6xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-10 sm:gap-x-8 sm:gap-y-16 w-full max-w-6xl mx-auto items-start">
             {teamData?.map((value, index) => (
               <motion.div
                 key={index}
@@ -82,7 +88,7 @@ const Team = () => {
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: index * 0.1, ease: [0.21, 0.47, 0.32, 0.98] }}
-                className="group flex-none w-[calc(50%-1rem)] lg:w-[calc(33.333%-2rem)] flex flex-col items-center justify-start gap-4 sm:gap-6"
+                className="group w-full flex flex-col items-center justify-start gap-4 sm:gap-6"
               >
                 <div className="relative w-full aspect-square overflow-hidden group-hover:grayscale transition-all duration-300">
                   <Image

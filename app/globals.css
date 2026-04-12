@@ -129,3 +129,25 @@
     @apply font-sans;
   }
 }
+
+@layer utilities {
+  .gradient-student {
+    background: linear-gradient(
+      160deg,
+      hsl(350, 100%, 55%) 0%,
+      hsl(15, 100%, 55%) 25%,
+      hsl(35, 95%, 60%) 45%,
+      hsl(45, 90%, 65%) 55%,
+      hsl(200, 60%, 70%) 75%,
+      hsl(230, 70%, 55%) 100%
+    );
+  }
+
+  .font-serif-display {
+    font-family: 'Instrument Serif', serif;
+  }
+
+  .font-mono-body {
+    font-family: 'IBM Plex Mono', monospace;
+  }
+}

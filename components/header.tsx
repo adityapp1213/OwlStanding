@@ -7,9 +7,11 @@ import React from 'react'
 import { cn } from '@/lib/utils'
 
 const menuItems = [
-    { name: 'Features', href: '#features' },
-    { name: 'Services', href: '#services' },
-    { name: 'Experts', href: '#experts' },
+    { name: 'Info', href: '/#cohort-info' },
+    { name: 'Features', href: '/#features' },
+    { name: 'Services', href: '/#services' },
+    { name: 'Experts', href: '/#experts' },
+    { name: 'Cohort', href: '/cohort' },
 ]
 
 export const HeroHeader = () => {

@@ -12,6 +12,8 @@ import Feature01 from "@/components/shadcn-space/blocks/feature-01";
 import Team01 from "@/components/shadcn-space/blocks/team-01/team";
 import Services02 from "@/components/shadcn-space/blocks/services-02/services";
 import { Footer } from "@/components/footer";
+import CohortSectionPic from "../public/cohortpic-removebg-preview.png";
+import Link from "next/link";
 
 const headingSerif = Instrument_Serif({
   subsets: ["latin"],
@@ -164,7 +166,58 @@ export default function Home() {
             </div>
           </div>
         </main>
-        <section id="features">
+
+        <section id="cohort-info" className="mt-2 md:mt-4">
+          <div className="flex flex-col items-center w-full">
+            {/* Mobile Pill - Only visible on small screens */}
+            <div className="md:hidden pt-6 mb-2">
+              <span className="inline-flex items-center rounded-full border border-foreground/10 bg-white/50 backdrop-blur-sm px-4 py-1 text-[10px] font-normal text-foreground">
+                Info
+              </span>
+            </div>
+
+            <div className="flex flex-col items-center gap-2 md:flex-row md:items-center md:gap-12 w-full">
+              {/* Content - Mobile top, Desktop right */}
+              <div className="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left px-4 order-1 md:order-2">
+                {/* Desktop Pill - Only visible on medium screens and up */}
+                <div className="hidden md:block mb-3">
+                  <span className="inline-flex items-center rounded-full border border-foreground/10 bg-white/50 backdrop-blur-sm px-4 py-1 text-xs font-normal text-foreground">
+                    Info
+                  </span>
+                </div>
+                <h2 className={`${headingSerif.className} text-5xl md:text-7xl text-foreground leading-[0.85] tracking-tighter`}>
+                  Cohort 1
+                </h2>
+                <p className="mt-2 font-mono-body text-[13px] md:text-sm text-muted-foreground leading-snug tracking-tight max-w-sm">
+                  Get full details on our upcoming program structure, schedule, and early bird benefits.
+                </p>
+                <div className="mt-4 w-full md:w-auto">
+                  <Link href="/cohort">
+                    <Button
+                      size="lg"
+                      className="w-full md:w-auto h-11 md:h-12 px-8 text-base rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+                    >
+                      Get more info
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+
+              {/* Image - Mobile bottom, Desktop left */}
+              <div className="w-full md:w-1/2 flex justify-center order-2 md:order-1">
+                <Image
+                  src={CohortSectionPic}
+                  alt="Cohort 1"
+                  width={600}
+                  height={450}
+                  className="w-full max-w-[340px] md:max-w-[480px] h-auto object-contain"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="features" className="mt-2 md:mt-4">
           <Feature01 />
         </section>
         <section id="services">
