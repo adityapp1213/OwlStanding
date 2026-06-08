@@ -10,6 +10,12 @@ interface SourceItem {
     label: string;
 }
 
+interface BrowserTab {
+    icon: string;
+    label: string;
+    mobLabel: string;
+}
+
 interface FeatureCard {
     id: string;
     command: string;
@@ -58,7 +64,7 @@ const features: FeatureCard[] = [
     },
 ];
 
-const browserTabs = [
+const browserTabs: BrowserTab[] = [
     { icon: "/whatsapp.png", label: "WhatsApp Web", mobLabel: "Groupchat" },
     { icon: "/meet.png", label: "Google Meet", mobLabel: "Class" },
     { icon: "/docs.png", label: "Project Brief - Docs", mobLabel: "Brief" },
@@ -162,7 +168,7 @@ export default function BrowserShowcase() {
                                                 className="mix-blend-multiply"
                                             />
                                             <span className="inline">
-                                                {isMobile ? (tab as any).mobLabel : tab.label}
+                                                {isMobile ? tab.mobLabel : tab.label}
                                             </span>
                                         </div>
                                     );

@@ -1,14 +1,7 @@
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { LucideIcon } from "lucide-react";
 import { motion } from "motion/react";
-import { Instrument_Serif } from "next/font/google";
-
-const headingSerif = Instrument_Serif({
-  subsets: ["latin"],
-  weight: ["400"],
-});
 
 type Features = {
   icon: LucideIcon;
@@ -38,7 +31,7 @@ const Feature = ({ featureData }: { featureData: Features }) => {
                 >
                   Features
                 </Badge>
-                <h2 className={`${headingSerif.className} font-normal tracking-tight text-foreground text-3xl sm:text-4xl md:text-5xl lg:text-6xl`}>
+                <h2 className="font-serif-display font-normal tracking-tight text-foreground text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
                   Campus to Corporate
                 </h2>
                 <p className="text-base md:text-lg font-normal text-muted-foreground">

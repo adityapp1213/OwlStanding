@@ -2,14 +2,8 @@
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Instrument_Serif } from "next/font/google";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
-
-const headingSerif = Instrument_Serif({
-  subsets: ["latin"],
-  weight: ["400"],
-});
 
 export interface SkillItem {
   step: number;
@@ -107,7 +101,7 @@ function Skills({ data = skillsData }: { data?: SkillItem[] }) {
           </Badge>
           <h2
             className={cn(
-              headingSerif.className,
+              "font-serif-display",
               "font-normal tracking-tight text-foreground text-3xl sm:text-4xl md:text-5xl"
             )}
           >

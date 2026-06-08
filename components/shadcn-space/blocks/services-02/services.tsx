@@ -2,14 +2,6 @@
 import Image from "next/image";
 import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Icon } from "@iconify/react";
-import { Instrument_Serif } from "next/font/google";
-
-const headingSerif = Instrument_Serif({
-    subsets: ["latin"],
-    weight: ["400"],
-});
 import { cn } from "@/lib/utils";
 
 export interface ServiceItem {
@@ -61,7 +53,7 @@ function Services({ data = servicesData }: ServicesProps) {
                             <Badge variant="outline" className="py-1 px-3 h-auto text-sm font-normal border-0 outline outline-border">
                                 Services
                             </Badge>
-                            <h2 className={cn(headingSerif.className, "font-normal tracking-tight text-foreground text-3xl sm:text-4xl md:text-5xl lg:text-6xl")}>What we do</h2>
+                            <h2 className={cn("font-serif-display", "font-normal tracking-tight text-foreground text-3xl sm:text-4xl md:text-5xl lg:text-6xl")}>What we do</h2>
                             <p className="max-w-2xl text-muted-foreground sm:text-lg text-base">
                                 A glimpse into our Thinking!
                             </p>
@@ -88,10 +80,10 @@ function Services({ data = servicesData }: ServicesProps) {
                                 {data?.map((value, index) => (
                                     <div
                                         key={index}
-                                        onMouseEnter={(e) => handleMouseEnter(index)}
+                                        onMouseEnter={() => handleMouseEnter(index)}
                                         className="group py-5 xl:py-8 border-t border-border cursor-pointer flex xl:flex-row flex-col xl:items-center items-start justify-between xl:gap-10 gap-1 relative">
                                         <h3 className={cn(
-                                            headingSerif.className,
+                                            "font-serif-display",
                                             "py-1 text-2xl md:text-3xl font-normal transition-colors max-w-2xs w-full",
                                             activeIndex === index ? "text-[#fc5610]" : "text-foreground",
                                             "group-hover:text-[#fc5610]"

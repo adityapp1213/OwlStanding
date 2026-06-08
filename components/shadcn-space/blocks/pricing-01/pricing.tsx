@@ -79,7 +79,7 @@ const Pricing = () => {
             </Badge>
             {/* Heading */}
             <div className="max-w-3xs sm:max-w-md mx-auto text-center">
-              <h2 className="text-foreground text-3xl sm:text-5xl font-medium">
+              <h2 className="font-serif-display text-foreground text-3xl sm:text-5xl font-medium">
                 Pricing we offer!
               </h2>
             </div>
@@ -114,14 +114,11 @@ const Pricing = () => {
                         </p>
                       </div>
                       <div className="flex flex-col gap-4">
-                        <p className="text-4xl sm:text-5xl font-semibold text-card-foreground flex items-end">
+                        <p className="font-serif-display text-4xl sm:text-5xl font-semibold text-card-foreground flex items-end">
                           ₹{items.plan_price}
-                          <span className="text-base font-normal text-muted-foreground">
-                            /month
-                          </span>
                         </p>
                         <Button
-                          className="relative bg-white hover:bg-white hover:text-black dark:hover:text-black text-black text-sm font-medium rounded-full h-12 p-1 ps-6 pe-14 group transition-all duration-500 hover:ps-14 hover:pe-6 w-fit overflow-hidden cursor-pointer"
+                          className="font-serif-display relative bg-white hover:bg-white hover:text-black dark:hover:text-black text-black text-sm font-medium rounded-full h-12 p-1 ps-6 pe-14 group transition-all duration-500 hover:ps-14 hover:pe-6 w-fit overflow-hidden cursor-pointer"
                           onClick={() => window.open('https://forms.gle/NYkQTh2EeLP3Jc5Z9', '_blank')}
                         >
                           <span className="relative z-10 transition-all duration-500">

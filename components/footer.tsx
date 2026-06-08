@@ -1,77 +1,94 @@
 'use client'
 
 import Link from 'next/link'
-import { Logo } from '@/components/logo'
-import { Instrument_Serif } from 'next/font/google'
+import { Icon } from '@iconify/react'
 import { cn } from '@/lib/utils'
 
-const headingSerif = Instrument_Serif({
-    subsets: ['latin'],
-    weight: ['400'],
-})
-
 const footerLinks = [
-    { name: 'Features', href: '#features' },
-    { name: 'Services', href: '#services' },
-    { name: 'Experts', href: '#experts' },
+    { name: 'About', href: '/home' },
+    { name: 'Features', href: '/home#features' },
+    { name: 'Services', href: '/home#services' },
+    { name: 'Experts', href: '/home#experts' },
+    { name: 'Cohort', href: '/cohort' },
+]
+
+const socialLinks = [
+    {
+        name: 'Instagram',
+        href: 'https://www.instagram.com/owlstanding',
+        icon: 'mdi:instagram',
+    },
+    {
+        name: 'LinkedIn',
+        href: 'https://www.linkedin.com',
+        icon: 'mdi:linkedin',
+    },
+    {
+        name: 'Email',
+        href: 'mailto:hello@owlstanding.com',
+        icon: 'mdi:email-outline',
+    },
 ]
 
 export const Footer = ({ className }: { className?: string }) => {
     return (
-        <footer className={cn("border-t", className)}>
-            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-2 md:py-4">
-                <div className="hidden md:flex flex-col md:flex-row justify-between items-start gap-8 md:gap-4">
-                    <div className="flex flex-col gap-1">
-                        <Link href="/" className="flex items-center">
-                            <Logo />
-                        </Link>
-
-                    </div>
-
-                    <div className="flex flex-col sm:flex-row gap-8 sm:gap-16 pt-6">
-                        <div className="flex flex-col gap-2">
-                            <h4 className="text-sm font-semibold uppercase tracking-wider text-foreground">Navigation</h4>
-                            <ul className="flex flex-col gap-2">
-                                {footerLinks.map((link) => (
-                                    <li key={link.name}>
-                                        <Link
-                                            href={link.href}
-                                            className="text-sm text-muted-foreground hover:text-[#fc5610] transition-colors"
-                                        >
-                                            {link.name}
-                                        </Link>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                        <div className="flex flex-col gap-2">
-                            <h4 className="text-sm font-semibold uppercase tracking-wider text-foreground">Contact</h4>
-                            <ul className="flex flex-col gap-2">
-                                <li>
-                                    <a
-                                        href="mailto:hello@owlstanding.com"
-                                        className="text-sm text-muted-foreground hover:text-[#fc5610] transition-colors"
-                                    >
-                                        hello@owlstanding.com
-                                    </a>
-                                </li>
-                                <li className="text-sm text-muted-foreground">
-                                    Odisha, India
-                                </li>
-                            </ul>
-                        </div>
+        <footer className={cn("border-t border-foreground/10 bg-background", className)}>
+            <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-8">
+                <div className="py-8 md:hidden">
+                    <div className="flex items-center justify-center gap-5">
+                        {socialLinks.map(({ name, href, icon }) => (
+                            <a
+                                key={name}
+                                href={href}
+                                aria-label={name}
+                                className="text-foreground transition-colors hover:text-[#fc5610]"
+                                target={href.startsWith('http') ? '_blank' : undefined}
+                                rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                            >
+                                <Icon icon={icon} className="size-5" />
+                            </a>
+                        ))}
                     </div>
                 </div>
 
-                <div className="md:mt-8 pt-4 md:border-t flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p className="text-xs text-muted-foreground font-medium">
-                        © {new Date().getFullYear()} OwlStanding. All rights reserved.
-                    </p>
-                    <div className="flex gap-6">
-                        <p className={cn(headingSerif.className, "text-lg text-foreground italic")}>
-                            Think Harder.
-                        </p>
+                <div className="hidden md:grid md:grid-cols-[1fr_auto_1fr] md:items-center md:gap-6 md:py-10">
+                    <Link href="/home" className="flex items-center gap-4 justify-start">
+                        <img src="/favicon.svg" alt="OwlStanding" className="h-16 w-16 shrink-0" />
+                        <span className="font-serif-display text-[2.1rem] leading-none text-foreground">OwlStanding</span>
+                    </Link>
+
+                    <nav className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-foreground/80">
+                        {footerLinks.map((link) => (
+                            <Link
+                                key={link.name}
+                                href={link.href}
+                                className="font-serif-display transition-colors hover:text-[#fc5610]"
+                            >
+                                {link.name}
+                            </Link>
+                        ))}
+                    </nav>
+
+                    <div className="flex items-center justify-end gap-5">
+                        {socialLinks.map(({ name, href, icon }) => (
+                            <a
+                                key={name}
+                                href={href}
+                                aria-label={name}
+                                className="text-foreground transition-colors hover:text-[#fc5610]"
+                                target={href.startsWith('http') ? '_blank' : undefined}
+                                rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                            >
+                                <Icon icon={icon} className="size-5" />
+                            </a>
+                        ))}
                     </div>
+                </div>
+
+                <div className="border-t border-foreground/10 py-6">
+                    <p className="text-center text-sm text-foreground">
+                        © {new Date().getFullYear()} OwlStanding. Think Harder.
+                    </p>
                 </div>
             </div>
         </footer>
