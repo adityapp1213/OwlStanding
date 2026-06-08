@@ -15,17 +15,17 @@ const footerLinks = [
 const socialLinks = [
     {
         name: 'Instagram',
-        href: 'https://www.instagram.com/owlstanding',
+        href: 'https://www.instagram.com/owlstanding.in',
         icon: 'mdi:instagram',
     },
     {
         name: 'LinkedIn',
-        href: 'https://www.linkedin.com',
+        href: 'https://www.linkedin.com/in/anjali-panigrahi',
         icon: 'mdi:linkedin',
     },
     {
         name: 'Email',
-        href: 'mailto:hello@owlstanding.com',
+        href: 'mailto:anjali.panigrahi.99@gmail.com',
         icon: 'mdi:email-outline',
     },
 ]

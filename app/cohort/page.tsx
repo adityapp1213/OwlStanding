@@ -17,9 +17,9 @@ export default function CohortPage() {
         <div className="relative px-3 py-6 md:px-12 md:py-12 pt-20 md:pt-24">
           <main className="relative z-10 mx-auto max-w-7xl">
             <h1
-              className="font-serif-display mt-3 md:mt-4 text-3xl sm:text-4xl font-normal tracking-tight text-foreground md:text-5xl lg:text-6xl text-center"
+              className="font-serif-display mt-3 pb-2 md:mt-4 md:pb-3 text-3xl sm:text-4xl font-normal tracking-tight text-foreground md:text-5xl lg:text-6xl text-center"
             >
-              Cohort 1 is here !!
+              Cohort 1 is here ^_^
             </h1>
             <div className="mt-2 flex justify-center">
               {/* Desktop Image */}
