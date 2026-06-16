@@ -28,7 +28,7 @@ export const servicesData: ServiceItem[] = [
     {
         heading: "Resume Crafting",
         descp: "Build a resume that truly reflects you, not just a template but something that gets noticed by recruiters",
-        image: "/Untitled design3.png"
+        image: "/design3.png"
     },
     {
         heading: "Career Readiness",

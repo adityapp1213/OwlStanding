@@ -12,6 +12,7 @@ import { Footer } from "@/components/footer";
 export default function CohortPage() {
   return (
     <>
+
       <HeroHeader />
       <div className="bg-[#f1f0ea] min-h-screen overflow-x-hidden">
         <div className="relative px-3 py-6 md:px-12 md:py-12 pt-20 md:pt-24">
@@ -20,6 +21,8 @@ export default function CohortPage() {
               className="font-serif-display mt-3 pb-2 md:mt-4 md:pb-3 text-3xl sm:text-4xl font-normal tracking-tight text-foreground md:text-5xl lg:text-6xl text-center"
             >
               Cohort 1 is here ^_^
+
+              
             </h1>
             <div className="mt-2 flex justify-center">
               {/* Desktop Image */}
@@ -83,6 +86,7 @@ export default function CohortPage() {
         </div>
         <Footer className="border-t-foreground/5 bg-[#f1f0ea]" />
       </div>
+      
     </>
   );
 }
