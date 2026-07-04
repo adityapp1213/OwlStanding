@@ -133,7 +133,7 @@ const Pricing = () => {
                         </p>
                         <Button
                           className="font-serif-display relative bg-white hover:bg-white hover:text-black dark:hover:text-black text-black text-sm font-medium rounded-full h-12 p-1 ps-6 pe-14 group transition-all duration-500 hover:ps-14 hover:pe-6 w-fit overflow-hidden cursor-pointer"
-                          onClick={() => window.open('https://forms.gle/NYkQTh2EeLP3Jc5Z9', '_blank')}
+                          onClick={() => window.open('https://form.typeform.com/to/e6SA9hjd', '_blank')}
                         >
                           <span className="relative z-10 transition-all duration-500">
                             Join the waitlist

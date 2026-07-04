@@ -79,7 +79,7 @@ export default function Home() {
                   aria-label="Join the OwlStanding waitlist"
                   onSubmit={(e) => {
                     e.preventDefault();
-                    window.open('https://forms.gle/NYkQTh2EeLP3Jc5Z9', '_blank');
+                    window.open('https://form.typeform.com/to/e6SA9hjd', '_blank');
                   }}
                 >
                   <label
@@ -104,7 +104,7 @@ export default function Home() {
                       disabled={!email}
                       onClick={() => {
                         if (email) {
-                          window.open('https://forms.gle/NYkQTh2EeLP3Jc5Z9', '_blank');
+                          window.open('https://form.typeform.com/to/e6SA9hjd', '_blank');
                         }
                       }}
                       className={`font-serif-display rounded-full sm:rounded-none sm:rounded-r-full bg-background px-6 py-3 h-auto text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.18em] border border-foreground/85 sm:border-0 cursor-pointer transition-colors pointer-events-auto ${email

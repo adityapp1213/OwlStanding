@@ -85,7 +85,7 @@ export const HeroHeader = () => {
                                     size="lg"
                                     onClick={() => {
                                         setMenuState(false);
-                                        window.open('https://forms.gle/NYkQTh2EeLP3Jc5Z9', '_blank');
+                                        window.open('https://form.typeform.com/to/e6SA9hjd', '_blank');
                                     }}
                                 >
                                     <span>Join Waitlist</span>

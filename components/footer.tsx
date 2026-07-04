@@ -13,11 +13,21 @@ const footerPalatino = localFont({
 export const Footer = ({ className }: { className?: string }) => {
     return (
         <section className={cn("relative z-10 bg-white px-4 pb-4 pt-4 sm:px-6 lg:pt-6", className)}>
-            <footer className="mx-auto flex min-h-[58vh] w-full max-w-[calc(100vw-2rem)] flex-col justify-end overflow-hidden rounded-xl bg-[#7ec8f5] px-5 pb-6 text-white antialiased sm:px-7 lg:min-h-[62vh] lg:max-w-[calc(100vw-3rem)] lg:px-8 lg:pb-8">
+            <footer
+                className="mx-auto flex min-h-[58vh] w-full max-w-[calc(100vw-2rem)] flex-col justify-end overflow-hidden rounded-xl px-5 pb-6 text-white antialiased sm:px-7 lg:min-h-[62vh] lg:max-w-[calc(100vw-3rem)] lg:px-8 lg:pb-8"
+                style={{
+                    backgroundColor: '#7ec8f5',
+                    backgroundImage:
+                        'url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIj48ZmlsdGVyIGlkPSJuIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iMS4xIiBudW1PY3RhdmVzPSI1IiBzdGl0Y2hUaWxlcz0ic3RpdGNoIi8+PC9maWx0ZXI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsdGVyPSJ1cmwoI24pIiBvcGFjaXR5PSIxIi8+PC9zdmc+)',
+                    backgroundRepeat: 'repeat',
+                    backgroundSize: '180px 180px',
+                    backgroundBlendMode: 'multiply',
+                }}
+            >
                 <div className="relative">
                     <h2 className={cn(
                         footerPalatino.className,
-                        "relative z-0 select-none whitespace-nowrap text-[21.5vw] font-normal leading-[0.8] tracking-[-0.11em] text-white"
+                        "relative z-0 select-none whitespace-nowrap text-[17.25vw] font-normal leading-[0.82] tracking-[-0.11em] text-white sm:text-[18.5vw] lg:text-[21.5vw]"
                     )}>
                         owlstanding.in
                     </h2>

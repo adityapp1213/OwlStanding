@@ -71,7 +71,7 @@ export default function CohortPage() {
                     <Button
                       size="lg"
                       className="font-serif-display w-full h-14 text-lg rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
-                      onClick={() => window.open('https://forms.gle/NYkQTh2EeLP3Jc5Z9', '_blank')}
+                      onClick={() => window.open('https://form.typeform.com/to/e6SA9hjd', '_blank')}
                     >
                       Join Waitlist
                     </Button>
