@@ -65,7 +65,7 @@ export default function CohortPage() {
                     1st & 2nd Aug
                   </h2>
                   <p className="mt-4 font-mono-body text-sm md:text-base text-foreground/50 uppercase tracking-[0.2em] leading-relaxed">
-                    Clear your schedules. You&apos;re definitely going to want to be here for this one.
+                    Clear your schedule. Will like to be take for one hour. 
                   </p>
                   <div className="mt-8 w-full px-4">
                     <Button

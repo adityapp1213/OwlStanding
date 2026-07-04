@@ -35,13 +35,13 @@ const teamData: team = [
   },
   {
     name: "Aditya Panigrahi",
-    role: "Founder Atom Tech",
+    role: "Founder Atom Ctrl",
     image: "/Gemini_Generated_Image_gw6l01gw6l01gw6l.png",
     socials: { instagram: "https://www.instagram.com/another.adityaa?igsh=ajVraGh3aDg2N2kx", linkedin: "https://www.linkedin.com/in/aditya-prasad-panigrahi" },
   },
   {
     name: "Pramit Kumar Sahu",
-    role: "Senior Software Engineer @PWC",
+    role: "Senior consultant  @PWC",
     image: "/image.png",
     socials: { instagram: "https://www.instagram.com/pramit_meee?igsh=bWozeGhjbDNka3Bs", linkedin: "https://www.linkedin.com/in/pramit-kumar-sahu" },
   },

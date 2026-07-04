@@ -25,7 +25,7 @@ const socialLinks = [
     },
     {
         name: 'Email',
-        href: 'mailto:anjali.panigrahi.99@gmail.com',
+        href: 'mailto:mentor@owlstanding.in ',
         icon: 'mdi:email-outline',
     },
 ]
