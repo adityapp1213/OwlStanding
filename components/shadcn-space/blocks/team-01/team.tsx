@@ -1,7 +1,15 @@
 "use client";
 import Image from "next/image";
+import localFont from "next/font/local";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "motion/react";
+
+const expertNameFont = localFont({
+  src: "../../../../assets/fonts/Palatino/palr45w.ttf",
+  display: "swap",
+  weight: "400",
+  style: "normal",
+});
 
 const LinkedinIcon = ({ size = 16 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -95,7 +103,7 @@ const Team = () => {
 
                 <div className="w-full flex flex-col gap-2 sm:gap-3 items-center justify-center">
                   <div className="flex flex-col items-center justify-center gap-1 sm:gap-1.5">
-                    <h3 className="text-xl sm:text-2xl md:text-3xl font-medium text-foreground text-center leading-tight">
+                    <h3 className={`${expertNameFont.className} text-xl sm:text-2xl md:text-3xl font-normal text-foreground text-center leading-tight`}>
                       {value.name}
                     </h3>
                     <p className="text-sm sm:text-base font-normal text-muted-foreground text-center">

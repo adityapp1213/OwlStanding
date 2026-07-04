@@ -1,96 +1,45 @@
 'use client'
 
-import Link from 'next/link'
-import { Icon } from '@iconify/react'
+import localFont from 'next/font/local'
 import { cn } from '@/lib/utils'
 
-const footerLinks = [
-    { name: 'About', href: '/home' },
-    { name: 'Features', href: '/home#features' },
-    { name: 'Services', href: '/home#services' },
-    { name: 'Experts', href: '/home#experts' },
-    { name: 'Cohort', href: '/cohort' },
-]
-
-const socialLinks = [
-    {
-        name: 'Instagram',
-        href: 'https://www.instagram.com/owlstanding.in',
-        icon: 'mdi:instagram',
-    },
-    {
-        name: 'LinkedIn',
-        href: 'https://www.linkedin.com/in/anjali-panigrahi',
-        icon: 'mdi:linkedin',
-    },
-    {
-        name: 'Email',
-        href: 'mailto:mentor@owlstanding.in ',
-        icon: 'mdi:email-outline',
-    },
-]
+const footerPalatino = localFont({
+    src: '../assets/fonts/Palatino/palr45w.ttf',
+    display: 'swap',
+    weight: '400',
+    style: 'normal',
+})
 
 export const Footer = ({ className }: { className?: string }) => {
     return (
-        <footer className={cn("border-t border-foreground/10 bg-background", className)}>
-            <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-8">
-                <div className="py-8 md:hidden">
-                    <div className="flex items-center justify-center gap-5">
-                        {socialLinks.map(({ name, href, icon }) => (
-                            <a
-                                key={name}
-                                href={href}
-                                aria-label={name}
-                                className="text-foreground transition-colors hover:text-[#fc5610]"
-                                target={href.startsWith('http') ? '_blank' : undefined}
-                                rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                            >
-                                <Icon icon={icon} className="size-5" />
-                            </a>
-                        ))}
+        <section className={cn("relative z-10 bg-white px-4 pb-4 pt-4 sm:px-6 lg:pt-6", className)}>
+            <footer className="mx-auto flex min-h-[58vh] w-full max-w-[calc(100vw-2rem)] flex-col justify-end overflow-hidden rounded-xl bg-[#7ec8f5] px-5 pb-6 text-white antialiased sm:px-7 lg:min-h-[62vh] lg:max-w-[calc(100vw-3rem)] lg:px-8 lg:pb-8">
+                <div className="relative">
+                    <h2 className={cn(
+                        footerPalatino.className,
+                        "relative z-0 select-none whitespace-nowrap text-[21.5vw] font-normal leading-[0.8] tracking-[-0.11em] text-white"
+                    )}>
+                        owlstanding.in
+                    </h2>
+                </div>
+
+                <div className={cn(
+                    footerPalatino.className,
+                    "mt-3 flex w-full flex-col items-start gap-5 text-sm font-medium uppercase leading-tight tracking-[-0.04em] text-white sm:mt-0 sm:flex-row sm:items-end sm:justify-between sm:text-base lg:text-lg"
+                )}>
+                    <div className="flex w-full items-start justify-between gap-8 sm:w-fit sm:justify-start sm:gap-16">
+                        <p>
+                            THINK HARDER.
+                        </p>
+                    </div>
+
+                    <div className="flex w-full items-start justify-between gap-8 sm:w-fit sm:justify-start sm:gap-16">
+                        <p className="text-left sm:text-right">
+                            ALL RIGHTS RESERVED © 2026
+                        </p>
                     </div>
                 </div>
-
-                <div className="hidden md:grid md:grid-cols-[1fr_auto_1fr] md:items-center md:gap-6 md:py-10">
-                    <Link href="/home" className="flex items-center gap-4 justify-start">
-                        <img src="/favicon.svg" alt="OwlStanding" className="h-16 w-16 shrink-0" />
-                        <span className="font-serif-display text-[2.1rem] leading-none text-foreground">OwlStanding</span>
-                    </Link>
-
-                    <nav className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-foreground/80">
-                        {footerLinks.map((link) => (
-                            <Link
-                                key={link.name}
-                                href={link.href}
-                                className="font-serif-display transition-colors hover:text-[#fc5610]"
-                            >
-                                {link.name}
-                            </Link>
-                        ))}
-                    </nav>
-
-                    <div className="flex items-center justify-end gap-5">
-                        {socialLinks.map(({ name, href, icon }) => (
-                            <a
-                                key={name}
-                                href={href}
-                                aria-label={name}
-                                className="text-foreground transition-colors hover:text-[#fc5610]"
-                                target={href.startsWith('http') ? '_blank' : undefined}
-                                rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                            >
-                                <Icon icon={icon} className="size-5" />
-                            </a>
-                        ))}
-                    </div>
-                </div>
-
-                <div className="border-t border-foreground/10 py-6">
-                    <p className="text-center text-sm text-foreground">
-                        © {new Date().getFullYear()} OwlStanding. Think Harder.
-                    </p>
-                </div>
-            </div>
-        </footer>
+            </footer>
+        </section>
     )
 }

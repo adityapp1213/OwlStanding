@@ -11,6 +11,14 @@ const handlee = localFont({
   display: "swap",
 });
 
+const palatino = localFont({
+  src: "../assets/fonts/Palatino/palr45w.ttf",
+  variable: "--font-palatino",
+  weight: "400",
+  style: "normal",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "OwlStanding | Join our waitlist",
   description: "Join the OwlStanding waitlist and get early access.",
@@ -29,7 +37,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${handlee.variable} h-full antialiased`}>
+    <html lang="en" className={`${handlee.variable} ${palatino.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-muted">
         <LoadingScreen />
         {children}
